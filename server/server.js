@@ -7,15 +7,12 @@ const memberRoutes = require("./routes/memberRoutes");
 
 const app = express();
 
-// Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Routes
 app.use("/api/projects", projectRoutes);
 app.use("/api/members", memberRoutes);
 
-// Error handling
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 8080;
